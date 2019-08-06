@@ -1,25 +1,46 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/omniauth-salesforce/version', __FILE__)
+# stub: omniauth-salesforce 1.0.3 ruby lib
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Richard Vanhook"]
-  gem.email         = ["rvanhook@salesforce.com"]
-  gem.description   = %q{OmniAuth strategy for salesforce.com.}
-  gem.summary       = %q{OmniAuth strategy for salesforce.com.}
-  gem.homepage      = "https://github.com/realdoug/omniauth-salesforce"
+Gem::Specification.new do |s|
+  s.name = "omniauth-salesforce"
+  s.version = "1.0.3"
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  gem.files         = `git ls-files`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  gem.name          = "omniauth-salesforce"
-  gem.require_paths = ["lib"]
-  gem.version       = OmniAuth::Salesforce::VERSION
-  gem.license       = "MIT"
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
+  s.authors = ["Richard Vanhook"]
+  s.date = "2019-07-31"
+  s.description = "OmniAuth strategy for salesforce.com."
+  s.email = ["rvanhook@salesforce.com"]
+  s.files = [".gitignore", ".rspec", "Gemfile", "Guardfile", "README.md", "Rakefile", "lib/omniauth-salesforce.rb", "lib/omniauth-salesforce/version.rb", "lib/omniauth/strategies/salesforce.rb", "omniauth-salesforce.gemspec", "spec/omniauth/strategies/salesforce_spec.rb", "spec/spec_helper.rb"]
+  s.homepage = "https://github.com/richardvanhook/omniauth-salesforce"
+  s.rubygems_version = "2.2.2"
+  s.summary = "OmniAuth strategy for salesforce.com."
+  s.test_files = ["spec/omniauth/strategies/salesforce_spec.rb", "spec/spec_helper.rb"]
 
-  gem.add_dependency 'omniauth', '~> 1.0'
-  gem.add_dependency 'omniauth-oauth2', '~> 1.0'
-  gem.add_development_dependency 'rspec', '~> 2.7'
-  gem.add_development_dependency 'rack-test'
-  gem.add_development_dependency 'simplecov'
-  gem.add_development_dependency 'webmock'
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
+
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<omniauth>, ["~> 1.0"])
+      s.add_runtime_dependency(%q<omniauth-oauth2>, ["~> 1.0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.7"])
+      s.add_development_dependency(%q<rack-test>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<webmock>, [">= 0"])
+    else
+      s.add_dependency(%q<omniauth>, ["~> 1.0"])
+      s.add_dependency(%q<omniauth-oauth2>, ["~> 1.0"])
+      s.add_dependency(%q<rspec>, ["~> 2.7"])
+      s.add_dependency(%q<rack-test>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<webmock>, [">= 0"])
+    end
+  else
+    s.add_dependency(%q<omniauth>, ["~> 1.0"])
+    s.add_dependency(%q<omniauth-oauth2>, ["~> 1.0"])
+    s.add_dependency(%q<rspec>, ["~> 2.7"])
+    s.add_dependency(%q<rack-test>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<webmock>, [">= 0"])
+  end
 end

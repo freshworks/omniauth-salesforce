@@ -2,8 +2,6 @@
 
 [OmniAuth](https://github.com/intridea/omniauth) Strategy for [salesforce.com](salesforce.com).
 
-Note: This is a fork of the [original](https://github.com/richardvanhook/omniauth-salesforce) project and is now the main repository for the omniauth-salesforce gem.
-
 ## See it in action
 
 [http://omniauth-salesforce-example.herokuapp.com](http://omniauth-salesforce-example.herokuapp.com)
@@ -12,37 +10,33 @@ Note: This is a fork of the [original](https://github.com/richardvanhook/omniaut
 
 ## Basic Usage
 
-```ruby
-require "sinatra"
-require "omniauth"
-require "omniauth-salesforce"
+    require "sinatra"
+    require "omniauth"
+    require "omniauth-salesforce"
 
-class MyApplication < Sinatra::Base
-  use Rack::Session
-  use OmniAuth::Builder do
-    provider :salesforce, ENV['SALESFORCE_KEY'], ENV['SALESFORCE_SECRET']
-  end
-end
-```
+    class MyApplication < Sinatra::Base
+      use Rack::Session
+      use OmniAuth::Builder do
+        provider :salesforce, ENV['SALESFORCE_KEY'], ENV['SALESFORCE_SECRET']
+      end
+    end
 
 ## Including other sites
 
-```ruby
-use OmniAuth::Builder do
-    provider :salesforce, 
-             ENV['SALESFORCE_KEY'], 
-             ENV['SALESFORCE_SECRET']
-    provider OmniAuth::Strategies::SalesforceSandbox, 
-             ENV['SALESFORCE_SANDBOX_KEY'], 
-             ENV['SALESFORCE_SANDBOX_SECRET']
-    provider OmniAuth::Strategies::SalesforcePreRelease, 
-             ENV['SALESFORCE_PRERELEASE_KEY'], 
-             ENV['SALESFORCE_PRERELEASE_SECRET']
-    provider OmniAuth::Strategies::DatabaseDotCom, 
-             ENV['DATABASE_DOT_COM_KEY'], 
-             ENV['DATABASE_DOT_COM_SECRET']
-end
-```
+    use OmniAuth::Builder do
+      provider :salesforce, 
+               ENV['SALESFORCE_KEY'], 
+               ENV['SALESFORCE_SECRET']
+      provider OmniAuth::Strategies::SalesforceSandbox, 
+               ENV['SALESFORCE_SANDBOX_KEY'], 
+               ENV['SALESFORCE_SANDBOX_SECRET']
+      provider OmniAuth::Strategies::SalesforcePreRelease, 
+               ENV['SALESFORCE_PRERELEASE_KEY'], 
+               ENV['SALESFORCE_PRERELEASE_SECRET']
+      provider OmniAuth::Strategies::DatabaseDotCom, 
+               ENV['DATABASE_DOT_COM_KEY'], 
+               ENV['DATABASE_DOT_COM_SECRET']
+    end
 
 ## Resources
 
